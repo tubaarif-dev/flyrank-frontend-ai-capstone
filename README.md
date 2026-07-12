@@ -26,3 +26,7 @@ This repository contains the capstone deliverable for the **FlyRank Frontend AI 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Status
+
+This project is under active development as part of the FlyRank Frontend AI Engineering Internship.
