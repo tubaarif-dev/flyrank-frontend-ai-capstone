@@ -1,0 +1,83 @@
+.settings-form {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 32px;
+    text-align: left;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+  }
+  
+  .settings-form h2 {
+    margin-bottom: 24px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .form-field label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-h);
+  }
+  
+  .form-field input[type='text'],
+  .form-field input[type='email'],
+  .form-field select {
+    padding: 10px 12px;
+    font-size: 16px;
+    font-family: var(--sans);
+    color: var(--text-h);
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-field input:focus-visible,
+  .form-field select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-color: var(--accent-border);
+  }
+  
+  .form-field--checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 400;
+  }
+  
+  .form-field--checkbox input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+  }
+  
+  .settings-form__save {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-family: var(--sans);
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .settings-form__save:hover {
+    border-color: var(--accent-border);
+  }
+  
+  .settings-form__save:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
