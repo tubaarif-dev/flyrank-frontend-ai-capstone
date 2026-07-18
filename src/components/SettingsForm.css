@@ -1,0 +1,197 @@
+.settings-form-card {
+  --sf-text: #5f6470;
+  --sf-heading: #111827;
+  --sf-bg: #ffffff;
+  --sf-surface: #f9fafb;
+  --sf-border: #e5e7eb;
+  --sf-border-focus: #6366f1;
+  --sf-accent: #4f46e5;
+  --sf-accent-hover: #4338ca;
+  --sf-error: #dc2626;
+  --sf-error-bg: #fef2f2;
+  --sf-radius: 12px;
+  --sf-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.08),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+
+  width: min(100%, 480px);
+  margin-inline: auto;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-radius);
+  background: var(--sf-bg);
+  box-shadow: var(--sf-shadow);
+  color: var(--sf-text);
+}
+
+.settings-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.settings-form__header {
+  display: grid;
+  gap: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+.settings-form__title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--sf-heading);
+}
+
+.settings-form__subtitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.settings-form__field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.settings-form__field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sf-heading);
+}
+
+.settings-form__required {
+  color: var(--sf-error);
+}
+
+.settings-form__field input[type='text'],
+.settings-form__field input[type='email'],
+.settings-form__field select {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--sf-heading);
+  background: var(--sf-surface);
+  border: 1px solid var(--sf-border);
+  border-radius: 8px;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.settings-form__field input::placeholder {
+  color: #9ca3af;
+}
+
+.settings-form__field input:focus-visible,
+.settings-form__field select:focus-visible {
+  outline: none;
+  border-color: var(--sf-border-focus);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background: var(--sf-bg);
+}
+
+.settings-form__field--invalid input {
+  border-color: var(--sf-error);
+  background: var(--sf-error-bg);
+}
+
+.settings-form__field--invalid input:focus-visible {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.18);
+}
+
+.settings-form__field--checkbox {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--sf-border);
+  border-radius: 8px;
+  background: var(--sf-surface);
+}
+
+.settings-form__field--checkbox input[type='checkbox'] {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  accent-color: var(--sf-accent);
+  cursor: pointer;
+}
+
+.settings-form__field--checkbox label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.settings-form__field--checkbox input:focus-visible {
+  outline: 2px solid var(--sf-border-focus);
+  outline-offset: 2px;
+}
+
+.settings-form__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--sf-error);
+}
+
+.settings-form__submit {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding: 0.8125rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--sf-accent);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.settings-form__submit:hover {
+  background: var(--sf-accent-hover);
+}
+
+.settings-form__submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+}
+
+.settings-form__submit:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+  .settings-form-card {
+    border-radius: 10px;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .settings-form-card {
+    --sf-text: #d1d5db;
+    --sf-heading: #f9fafb;
+    --sf-bg: #111827;
+    --sf-surface: #1f2937;
+    --sf-border: #374151;
+    --sf-border-focus: #818cf8;
+    --sf-accent: #6366f1;
+    --sf-accent-hover: #818cf8;
+    --sf-error-bg: rgba(220, 38, 38, 0.12);
+    --sf-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.35),
+      0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .settings-form__field input::placeholder {
+    color: #6b7280;
+  }
+}
